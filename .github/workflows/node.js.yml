@@ -51,6 +51,9 @@ jobs:
         terraform_version: 1.1.7
 
     - name: Terraform Init
+      env:
+        ARM_CLIENT_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: terraform init
 
     - name: Terraform Plan
