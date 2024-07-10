@@ -72,10 +72,8 @@ jobs:
       run: terraform apply --auto-approve
       
     - name: Check if inventory file exists
-      run: ls -l ./inventory
+      run: ls 
 
-    - name: Output Inventory File
-      run: cat ./inventory
 
 
 
