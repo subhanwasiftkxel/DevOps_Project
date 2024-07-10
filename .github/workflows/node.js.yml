@@ -61,7 +61,7 @@ jobs:
       with:
         terraform_version: 1.9.1
     - name: make inventroy file
-      run: touch inventory
+      run: touch inventory.txt
 
     - name: Terraform Init
       run: terraform init
