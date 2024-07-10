@@ -54,12 +54,7 @@ jobs:
         terraform_version: 1.9.1
 
     - name: Terraform Init
-      uses: hashicorp/terraform-github-actions@master
-      with:
-        tf_actions_version: 0.12.13
-        tf_actions_subcommand: 'init'
-        tf_actions_working_dir: '.'
-        tf_actions_comment: true
+      run: terraform init
 
     - name: Terraform Plan
       run: terraform plan
