@@ -71,8 +71,10 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply --auto-approve
-    - name: check point
+    - name: check point 1
       run: ls
+    - name: check point 2
+      run: cat inventory.ini
 
 
 
