@@ -75,7 +75,7 @@ jobs:
 
 
     - name: check ips
-      run: cat inventory
+      run: cat inventory.txt
       
     - name: Check if inventory file exists
       run: ls 
