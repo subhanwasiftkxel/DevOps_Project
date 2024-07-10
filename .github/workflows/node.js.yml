@@ -70,8 +70,13 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply --auto-approve
-    - name: Display Inventory
-      run: cat inventory
+      
+    - name: Check if inventory file exists
+      run: ls -l ./inventory
+
+    - name: Output Inventory File
+      run: cat ./inventory
+
 
 
 
