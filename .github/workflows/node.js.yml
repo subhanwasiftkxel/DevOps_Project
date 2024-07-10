@@ -70,6 +70,8 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply --auto-approve
+    - name: Display Inventory
+      run: cat inventory
 
 
 
