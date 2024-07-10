@@ -110,6 +110,13 @@ resource "aws_instance" "my_ec2_instance" {
   tags = {
     Name = "MyEC2Instance"
   }
+  provisioner "local-exec" {
+    command = <<EOT
+      echo "[my_ec2_instance]" > inventory
+      echo "${aws_instance.my_ec2_instance.public_ip} ansible_user=ubuntu ansible_ssh_private_key_file=~/.ssh/MyKeyPair.pem >> inventory
+      echo "It is working, the key is ${aws_instance.my_ec2_instance.public_ip}"
+    EOT
+  }
 }
 
 
