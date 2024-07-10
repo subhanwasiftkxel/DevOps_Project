@@ -72,10 +72,8 @@ jobs:
       run: terraform apply --auto-approve
 
     - name: make inventroy file
-      run:
-        if [ ! -f inventory ]; then
-          touch inventory
-        fi
+      run: touch inventory
+
       
     - name: Check if inventory file exists
       run: ls 
