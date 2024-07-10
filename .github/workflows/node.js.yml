@@ -68,7 +68,7 @@ jobs:
       run: terraform validate
 
     - name: Terraform Plan
-      run: terraform plan
+      run: terraform plan -out
 
     - name: Terraform Apply
       env:
