@@ -30,6 +30,9 @@ jobs:
         node-version: ${{matrix.node_version}}
     - name: Install dependencies
       run: npm install
+    - name: run server
+      run : node main.js &
+      
 
   terraform:
     name: 'Terraform Apply'
@@ -47,6 +50,11 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      
+    - name: Format the terraform
+      run: terraform fmt
+      
+
 
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
@@ -55,6 +63,9 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
+      
+    - name: validate terraform
+      run: terraform validate
 
     - name: Terraform Plan
       run: terraform plan
