@@ -71,12 +71,7 @@ jobs:
       run: terraform plan 
 
     - name: Terraform Apply
-      env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-      run: 
-        echo "${SSH_KEY}" > ~/.ssh/MyKeyPair.pem
-        chmod 600 ~/.ssh/MyKeyPair.pem
-        terraform apply -auto-approve
+      run: terraform apply
 
 
 
