@@ -71,6 +71,8 @@ jobs:
 
     - name: Terraform Apply
       run: terraform apply --auto-approve
+    - name: check point
+      run: ls
 
 
 
