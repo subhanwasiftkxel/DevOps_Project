@@ -60,8 +60,7 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.9.1
-    - name: make inventroy file
-      run: touch inventory.txt
+
 
     - name: Terraform Init
       run: terraform init
