@@ -60,6 +60,8 @@ jobs:
       uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.9.1
+    - name: make inventroy file
+      run: touch inventory
 
     - name: Terraform Init
       run: terraform init
@@ -71,9 +73,9 @@ jobs:
     - name: Terraform Apply
       run: terraform apply --auto-approve
 
-    - name: make inventroy file
-      run: touch inventory
 
+    - name: check ips
+      run: cat inventory
       
     - name: Check if inventory file exists
       run: ls 
