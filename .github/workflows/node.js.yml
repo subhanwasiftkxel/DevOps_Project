@@ -73,11 +73,6 @@ jobs:
       run: terraform apply --auto-approve
 
 
-    - name: check ips
-      run: cat inventory.txt
-      
-    - name: Check if inventory file exists
-      run: ls 
 
 
 
